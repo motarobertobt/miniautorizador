@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import miniautorizador.controller.resource.CreateCardResponseResource;
+
 @RestController
 @RequestMapping("/cartoes")
 public class CardsController {
@@ -19,10 +21,10 @@ public class CardsController {
     }
 
     @PostMapping()
-    public void createCard(int cardNumber){
+    public CreateCardResponseResource createCard(int cardNumber){
 
 
-
+        return null;
     }
     
     
