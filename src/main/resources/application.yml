@@ -1,0 +1,15 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: 'mini-autorizador'
+    datasource:
+        platform: mysql
+        driverclassname: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/miniautorizador
+        username: root      
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+
