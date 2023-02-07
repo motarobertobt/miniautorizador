@@ -1,0 +1,23 @@
+server:
+  port: 8085
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  sql:
+    init:
+      platform: mysql      
+  datasource:      
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/miniautorizador
+      username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+
