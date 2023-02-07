@@ -2,15 +2,12 @@ package miniautorizador.usecase.gateway.impl;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 import lombok.AllArgsConstructor;
 import miniautorizador.domain.CardDomain;
 import miniautorizador.domain.CreateCardsDomain;
 import miniautorizador.repository.CardsRepository;
-import miniautorizador.repository.model.Card;
 import miniautorizador.usecase.gateway.CardGateway;
 import miniautorizador.usecase.gateway.converter.CreateCardDomainToCards;
 import miniautorizador.usecase.gateway.converter.CardDomainToCards;
