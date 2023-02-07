@@ -16,6 +16,7 @@ public class CreateCardUseCaseImpl implements CreateCardUseCase {
 
     @Override
     public CardDomain execute(CreateCardsDomain cardData) throws Throwable {
+        cardData.setBalance(500.00);
         return cardGateway.saveCard(cardData);
     }
 

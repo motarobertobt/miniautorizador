@@ -25,7 +25,7 @@ public class Card {
     @Column(unique = true)
     private String numeroCartao;
     private String senha;
-    @Column(columnDefinition = "double default 500")
+    @Column(columnDefinition = "Double default 500")
     private double balance;
     private final Date createdDate = new Date();
 }

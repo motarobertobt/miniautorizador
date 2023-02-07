@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import lombok.AllArgsConstructor;
+import miniautorizador.config.exceptions.NoOneCardFound;
 import miniautorizador.controller.converter.CardDomainToCreateCardResponseResource;
 import miniautorizador.controller.converter.CreateCardRequestResourceToCreateCardDomain;
 import miniautorizador.controller.resource.CreateCardRequestResource;
@@ -31,8 +32,8 @@ public class CardsController {
         try {
             final var balance = checkBalanceUseCaseImpl.execute(numeroCartao);     
             return ResponseEntity.status(200).body(balance);       
-        } catch (Error e) {
-            return ResponseEntity.status(400).body(null);             
+        } catch (NoOneCardFound e) {
+            return ResponseEntity.status(404).body(null);             
         }
     }
 

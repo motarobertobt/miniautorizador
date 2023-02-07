@@ -25,7 +25,6 @@ public class TransactionController {
         final var transactionDomain = authRequestResourceToTransactionDomain.convert(authRequestResource);
         final var result = transactionUseCase.execute(transactionDomain);
         return ResponseEntity.status(result.getStatus()).body(result.getMessage().toString());
-
     }
 
 }

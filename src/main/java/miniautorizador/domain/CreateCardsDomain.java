@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class CreateCardsDomain {
     private String numeroCartao;
     private String senha;
+    private Double balance;
 }
