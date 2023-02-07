@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class CheckBalanceResponseResource {
-    private double balance;
+public class CreateCardRequestResource {
+    private String numeroCartao;
+    private String senha;
 }

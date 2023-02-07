@@ -1,5 +1,5 @@
 package miniautorizador.usecase;
 
 public interface CheckBalanceUseCase {
-    double execute(int cardNumber);
+    Double execute(String numeroCartao);
 }

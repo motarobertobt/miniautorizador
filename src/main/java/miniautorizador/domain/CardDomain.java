@@ -1,4 +1,6 @@
-package miniautorizador.controller.resource;
+package miniautorizador.domain;
+
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCardResponseResource {
+public class CardDomain {
     private String numeroCartao;
     private String senha;
+    private double balance;    
+    private Date createdAt;    
 }

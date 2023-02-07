@@ -11,18 +11,20 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
+@NoArgsConstructor
 public class Transaction {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
-    private int cardNumber;
+    private String numeroCartao;
     private double value;
     private Date dateTransaction;
 }
