@@ -12,6 +12,7 @@ import miniautorizador.domain.CardDomain;
 import miniautorizador.domain.StatusAuth;
 import miniautorizador.domain.TransactionDomain;
 import miniautorizador.usecase.TransactionUseCase;
+import miniautorizador.usecase.gateway.AuthGateway;
 import miniautorizador.usecase.gateway.CardGateway;
 
 @Service
@@ -22,6 +23,7 @@ public class TransactionUseCaseImpl implements TransactionUseCase {
     private static final String NAO_ENCONTRADO = "Cartão não encontrado";
     private static final String SENHA_INVALIDA = "Senha Invalida";
     private CardGateway cardGateway;
+    private AuthGateway authGateway;
 
     @Override
     public AuthResponseDomain execute(TransactionDomain transaction) {
@@ -33,6 +35,7 @@ public class TransactionUseCaseImpl implements TransactionUseCase {
                     .orElseThrow(() -> new NotEnoughBalanceAccountException(SEM_SALDO_SUFICIENTE));
             final var newCard = setNewBalance(card, transaction.getValor());
             cardGateway.updateCard(newCard);
+            authGateway.saveTransaction(transaction);
             return AuthResponseDomain.builder().status(201).message(StatusAuth.OK).build();
         } catch (NoOneCardFound e) {            
             return AuthResponseDomain.builder().status(422).message(StatusAuth.CARTAO_INEXISTENTE).build();
