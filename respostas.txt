@@ -1,0 +1,8 @@
+Apresente observações/problemas sobre essa solução.Comente qual(is) a(s) sua(s) estratégia(s) para melhorar este sistema em termos de qualidade e manutenção. Justifique suas decisões.
+    Segmentar as classes para ter responsabilidades unicas e adoção de filas para gerenciar pagamentos.
+
+Descreva quais são as principais limitações ao se adotar servidores de aplicação em uma arquitetura orientada a microsserviços. 
+    Maior complexidade em manutenção
+
+Atualmente, diversas aplicações escritas em Java estão deixando de serem desenvolvidas para rodarem em servidores (JBoss, Tomcat), adotando ferramentas que disponibilizam um servidor embutido na própria ferramenta. Quais são os principais desafios ao se tomar uma decisão dessas? Justifique sua resposta.
+    Para mim so há vantagens
