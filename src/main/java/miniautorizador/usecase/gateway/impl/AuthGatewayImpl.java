@@ -1,25 +1,42 @@
 package miniautorizador.usecase.gateway.impl;
 
-import miniautorizador.usecase.gateway.AuthGateway;
+import org.springframework.stereotype.Service;
 
-public class AuthGatewayImpl implements AuthGateway{
+import lombok.AllArgsConstructor;
+import miniautorizador.domain.TransactionDomain;
+import miniautorizador.repository.AuthRepository;
+import miniautorizador.usecase.gateway.AuthGateway;
+import miniautorizador.usecase.gateway.converter.TransactionDomainToTransaction;
+import miniautorizador.usecase.gateway.converter.TransactionToTransactionDomain;
+
+
+@Service
+@AllArgsConstructor
+public class AuthGatewayImpl implements AuthGateway {
+
+    private final AuthRepository authRepository;
+    private final TransactionDomainToTransaction transactionDomainToTransaction;
+    private final TransactionToTransactionDomain transactionToTransactionDomain;
+    
 
     @Override
-    public void saveTransaction() {
-        // TODO Auto-generated method stub
-        
+    public TransactionDomain saveTransaction(TransactionDomain transaction) {              
+        final var transactionModel = transactionDomainToTransaction.convert(transaction);
+        final var saved = authRepository.save(transactionModel);
+        return transactionToTransactionDomain.convert(saved);        
     }
 
     @Override
-    public void listTransaction() {
+    public Double listTransaction() {
+        return null;
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
     public void updateTransaction() {
         // TODO Auto-generated method stub
-        
+
     }
-    
+
 }

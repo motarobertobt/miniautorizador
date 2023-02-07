@@ -13,6 +13,6 @@ public class TransactionDomain {
 
     private String numeroCartao;
     private String senha;
-    private double value;
+    private Double valor;
     
 }

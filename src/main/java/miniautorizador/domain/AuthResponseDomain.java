@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCardsDomain {
-    private String numeroCartao;
-    private String senha;
+public class AuthResponseDomain {
+
+    private int status;
+    private StatusAuth message;
 }

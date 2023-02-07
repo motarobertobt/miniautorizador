@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CardDomain {
+    private int id;
     private String numeroCartao;
     private String senha;
     private double balance;    

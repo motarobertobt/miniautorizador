@@ -1,7 +1,8 @@
 package miniautorizador.usecase;
 
+import miniautorizador.domain.AuthResponseDomain;
 import miniautorizador.domain.TransactionDomain;
 
 public interface TransactionUseCase {
-    TransactionDomain execute(TransactionDomain transaction);
+    AuthResponseDomain execute(TransactionDomain transaction);
 }

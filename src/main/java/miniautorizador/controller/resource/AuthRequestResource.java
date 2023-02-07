@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 public class AuthRequestResource {
     private String numeroCartao;
     private String senha;
-    private double value;
+    private Double valor;
 }

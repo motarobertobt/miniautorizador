@@ -25,6 +25,6 @@ public class Transaction {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     private String numeroCartao;
-    private double value;
-    private Date dateTransaction;
+    private Double valor;
+    private final Date dateTransaction = new Date();
 }

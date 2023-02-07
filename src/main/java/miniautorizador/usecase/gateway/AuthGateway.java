@@ -1,8 +1,10 @@
 package miniautorizador.usecase.gateway;
 
+import miniautorizador.domain.TransactionDomain;
+
 public interface AuthGateway {
 
-    void saveTransaction();
-    void listTransaction();
+    TransactionDomain saveTransaction(TransactionDomain transaction);
+    Double listTransaction();
     void updateTransaction();
 }
